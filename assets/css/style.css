@@ -103,34 +103,99 @@ header nav ul li a {
 /*---------WORK---------*/
 /************************/
 
+.grid-container {
+    display: grid;
+    grid-template-columns: 440px 1fr;
+    grid-template-rows: none;
+}
 .work {
     width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: auto;
     flex-wrap: wrap;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 .work div {
     margin: 25px;
 }
 .work h2 {
-    padding-bottom: 100px;
+    padding-bottom: 800px;
     position: relative;
-    right: 1px;
+    left: 1px;
+    text-align: center;
 }
-.placeholder1 {
-    padding: 200px 400px;
+.card {
+    display: flex;
     border: 5px solid #3a87a1;
-    position: relative;
-    left: 100px;
+    flex: 1 0 0;
+    padding: 10px;
+    text-align: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
 }
-.placeholder2 {
-    padding: 75px 150px;
+.placeholder {
+    display: flex;
     border: 5px solid #3a87a1;
-    position: relative;
-    left: 550px;
-    flex-wrap: wrap;
+    flex: 1 0 0;
+    padding: 10px;
+    text-align: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
 }
+.one {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+.two {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+.three {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 3;
+}
+.four {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 3;
+}
+.card img {
+    width: 100%;
+    max-width: 400px;
+    min-width: 400px;
+}
+.placeholder img {
+    width: 100%;
+    max-width: 200px;
+    min-width: 200px;
+}
+.placeholder2 img {
+    width: 100%;
+    max-width: 200px;
+    min-width: 200px;
+}
+
 
 /**************************/
 /*---------RESUME---------*/
@@ -149,6 +214,11 @@ header nav ul li a {
 .resume h2 {
     position: relative;
     right: 47px;
+}
+.resume img {
+    width: 25%;
+    /* The client insists that images be at least 400px */
+    min-width: 10px;
 }
 
 /***************************/
