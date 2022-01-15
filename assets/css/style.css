@@ -119,8 +119,8 @@ header nav ul li a {
 }
 .card-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 50px 1fr 1fr;
+    grid-template-rows: 1fr 220px 220px;
     grid-column-start: 2;
     grid-row-start: 1;
     grid-row-end: 2;
@@ -136,21 +136,13 @@ header nav ul li a {
 }
 .card {
     display: flex;
-    border: 5px solid #3a87a1;
-    flex: 1 0 0;
-    padding: 10px;
-    text-align: center;
-    grid-column-start: 2;
-    grid-column-end: 3;
+    justify-content: center;
+    align-items: center;
+    grid-column: 2 / span 3;
     grid-row-start: 1;
     grid-row-end: 1;
 }
 .placeholder {
-    display: flex;
-    border: 5px solid #3a87a1;
-    flex: 1 0 0;
-    padding: 10px;
-    text-align: center;
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 2;
@@ -182,20 +174,15 @@ header nav ul li a {
 }
 .card img {
     width: 100%;
-    max-width: 400px;
-    min-width: 400px;
+    border-radius: 15px;
 }
 .placeholder img {
-    width: 100%;
-    max-width: 200px;
-    min-width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 15px;
 }
-.placeholder2 img {
-    width: 100%;
-    max-width: 200px;
-    min-width: 200px;
-}
-
 
 /**************************/
 /*---------RESUME---------*/
@@ -217,7 +204,6 @@ header nav ul li a {
 }
 .resume img {
     width: 25%;
-    /* The client insists that images be at least 400px */
     min-width: 10px;
 }
 
@@ -246,3 +232,37 @@ header nav ul li a {
     flex-wrap: wrap;
 }
 
+
+/*****************************************/
+/*--MEDIA QUERY FOR TABLETS AND SMALLER--*/
+/*****************************************/
+
+@media screen and (max-width: 768px) {
+    section {
+        padding: 30px 15px;        
+    }
+    .step h3 {
+        flex: 1 100%;
+        text-align: center;
+    }
+    .step-info {
+        flex: 2 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    .step-img {
+        flex: 0 32%;
+        margin-right: 0;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .step-text {
+        flex: 100%;
+    }
+}
+
+
+section {
+    flex: 0 0 20px;
+
+}
