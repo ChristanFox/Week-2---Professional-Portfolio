@@ -1,5 +1,5 @@
-/*****************************/
-/*---------UNIVERSAL---------*/
+  /*****************************/
+ /*---------UNIVERSAL---------*/
 /*****************************/
 
 * {
@@ -13,16 +13,20 @@
 }
 h2 {
     text-decoration: solid;
-    padding: 1em;
-    padding-left: 8em;
-    margin: 0 -1em;
     border-right: 5px solid #3a87a1;
     direction: rtl; 
     font-size: 40px;
+    padding-right: 20px;
+    flex: 0 0 20px;
 }
 
-/**************************/
-/*---------HEADER---------*/
+section {
+    flex: 0 0 100px;
+    justify-content: center;
+}
+
+  /**************************/
+ /*---------HEADER---------*/
 /**************************/
 .title {
     padding-left: 80px;
@@ -61,8 +65,8 @@ header nav ul li a {
     text-decoration: underline;
 }
 
-/************************/
-/*---------HERO---------*/
+  /************************/
+ /*---------HERO---------*/
 /************************/
 
 .hero {
@@ -74,8 +78,8 @@ header nav ul li a {
     color: white;
 }
 
-/****************************/
-/*---------ABOUT ME---------*/
+  /****************************/
+ /*---------ABOUT ME---------*/
 /****************************/
 
 .intro {
@@ -84,13 +88,9 @@ header nav ul li a {
     align-items: center;
     justify-content: space-between;
 }
-.intro div {
+.intro p {
     margin: 25px;
     width: auto;
-}
-.intro h2 {
-    position: relative;
-    right: 11px;
 }
 .paragraph1 {
     margin-bottom: 25px;
@@ -99,93 +99,55 @@ header nav ul li a {
     padding-left: 40px;
 }
 
-/************************/
-/*---------WORK---------*/
+  /************************/
+ /*---------WORK---------*/
 /************************/
 
-.grid-container {
-    display: grid;
-    grid-template-columns: 440px 1fr;
-    grid-template-rows: none;
+.cards {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-flow: row wrap;
+  }
+.work-section {
+    width: 80%;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
 }
 .work {
-    width: 80%;
-    height: auto;
-    flex-wrap: wrap;
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row-start: 1;
-    grid-row-end: 2;
-}
-.card-container {
-    display: grid;
-    grid-template-columns: 50px 1fr 1fr;
-    grid-template-rows: 1fr 220px 220px;
-    grid-column-start: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-}
-.work div {
-    margin: 25px;
+    flex: 0;
 }
 .work h2 {
-    padding-bottom: 800px;
-    position: relative;
-    left: 1px;
-    text-align: center;
+    padding-bottom: 900px;
+}
+.cards:nth-child(1) {
+    flex: 2 0 100%;
+}
+.cards:nth-child(2) .cards:nth-child(3) {
+    flex: 1 0 50%;
+}
+.work-section div {
+    justify-content: space-around;
 }
 .card {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    grid-column: 2 / span 3;
-    grid-row-start: 1;
-    grid-row-end: 1;
-}
-.placeholder {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 2;
-}
-.one {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 2;
-}
-.two {
-    grid-column-start: 3;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 2;
-}
-.three {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 3;
-    grid-row-end: 3;
-}
-.four {
-    grid-column-start: 3;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 3;
+    border-radius: 15px;
+    gap: 20px;
+    height: auto;
 }
 .card img {
     width: 100%;
     border-radius: 15px;
 }
-.placeholder img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    border-radius: 15px;
-}
 
-/**************************/
-/*---------RESUME---------*/
+  /**************************/
+ /*---------RESUME---------*/
 /**************************/
 
 .resume {
@@ -198,17 +160,13 @@ header nav ul li a {
     margin: 25px;
     border: 5px solid black;
 }
-.resume h2 {
-    position: relative;
-    right: 47px;
-}
 .resume img {
     width: 25%;
     min-width: 10px;
 }
 
-/***************************/
-/*---------CONTACT---------*/
+  /***************************/
+ /*---------CONTACT---------*/
 /***************************/
 
 .contact {    
@@ -216,11 +174,6 @@ header nav ul li a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.contact h2 {
-    direction: rtl;
-    position: relative;
-    right: 40px;
 }
 .contact a {
     justify-content: space-evenly;
@@ -233,36 +186,64 @@ header nav ul li a {
 }
 
 
+  /*****************************************/
+ /*--MEDIA QUERY FOR TABLETS AND SMALLER--*/
 /*****************************************/
-/*--MEDIA QUERY FOR TABLETS AND SMALLER--*/
+
+@media screen and (max-width: 980px) {
+    .header {
+        flex-direction: column;
+    }
+    .hero {
+        background-position: 50%;
+    }
+    h2 {
+        border-right: none;
+        border-bottom: 5px solid #3a87a1;
+    }
+    section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .work h2 {
+        padding-bottom: 0px;
+        text-align: center;
+    }
+    .resume a {
+        text-align: center;
+        padding-top: 20px;
+    }
+    .contact {
+        text-align: center;
+    }
+    .contact a {
+        flex-flow: row wrap;
+        width: 500px;
+    }
+}
+  /*****************************************/
+ /*--MEDIA QUERY FOR TABLETS AND SMALLER--*/
 /*****************************************/
 
 @media screen and (max-width: 768px) {
-    section {
-        padding: 30px 15px;        
+    * {
+    font-size: large;
     }
-    .step h3 {
-        flex: 1 100%;
-        text-align: center;
-    }
-    .step-info {
-        flex: 2 100%;
-        text-align: center;
-        justify-content: center;
-    }
-    .step-img {
-        flex: 0 32%;
-        margin-right: 0;
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-    .step-text {
-        flex: 100%;
+    a {
+        font-size: large;
     }
 }
 
+  /***********************************************/
+ /*--MEDIA QUERY FOR MOBILE PHONES AND SMALLER--*/
+/***********************************************/
 
-section {
-    flex: 0 0 20px;
-
+@media screen and (max-width: 575px) {
+    * {
+        font-size: larger;
+    }
+    .header nav ul li a {
+        font-size: 50px;
+    }
 }
+
